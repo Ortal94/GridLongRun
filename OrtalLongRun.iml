@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/apiguardian-api-1.0.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/boon-0.33.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/commons-beanutils-1.9.3.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/commons-codec-1.9.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/commons-collections-3.2.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/commons-io-2.4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/commons-lang3-3.8.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/commons-logging-1.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/hamcrest-core-1.3.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/httpclient-4.5.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/httpcore-4.4.4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/httpmime-4.5.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/imageClient.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/jackson-annotations-2.9.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/jackson-core-2.9.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/jackson-databind-2.9.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/json-20160810.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/junit-4.12.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/junit-jupiter-api-5.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/junit-jupiter-engine-5.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/junit-platform-commons-1.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/junit-platform-engine-1.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/manager-client-api.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/manager-client.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/mobile-webdriver.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/opentest4j-1.1.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/selenium-api-2.42.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/selenium-support-2.44.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/slf4j-api-1.7.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/slf4j-simple-1.7.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/ws-commons-util-1.0.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/xmlrpc-client-3.1.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/xmlrpc-common-3.1.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/args4j-2.33.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/imageClient_doc.zip!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest12.3.4927/clients/java/args4j-2.33.jar!/OSGI-OPT/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/apiguardian-api-1.0.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/appium-seetest-extension-12.4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/aspectjweaver-1.8.9.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/cglib-nodep-3.2.4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-beanutils-1.9.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-codec-1.10.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-collections-3.2.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-digester-1.8.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-exec-1.3.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-io-2.4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-lang3-3.4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-logging-1.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/commons-validator-1.5.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/cssparser-0.9.18.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/gson-2.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/guava-19.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/hamcrest-core-1.3.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/htmlunit-2.21.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/htmlunit-core-js-2.17.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/htmlunit-driver-2.21.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/httpclient-4.5.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/httpcore-4.4.4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/httpmime-4.5.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/java-client-4.1.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/jcommander-1.48.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/jetty-io-9.2.15.v20160210.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/jetty-util-9.2.15.v20160210.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/jna-4.1.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/jna-platform-4.1.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/junit-4.12.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/junit-jupiter-api-5.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/junit-jupiter-engine-5.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/junit-platform-commons-1.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/junit-platform-engine-1.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/neko-htmlunit-2.21.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/netty-3.5.7.Final.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/opentest4j-1.1.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/sac-1.3.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-api-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-chrome-driver-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-edge-driver-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-firefox-driver-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-ie-driver-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-leg-rc-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-remote-driver-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-safari-driver-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/selenium-support-2.53.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/serializer-2.7.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/spring-aop-4.3.2.RELEASE.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/spring-beans-4.3.2.RELEASE.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/spring-context-4.3.2.RELEASE.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/spring-core-4.3.2.RELEASE.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/spring-expression-4.3.2.RELEASE.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/testng-6.10.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/websocket-api-9.2.15.v20160210.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/websocket-client-9.2.15.v20160210.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/websocket-common-9.2.15.v20160210.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/xalan-2.7.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/xercesImpl-2.11.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/xml-apis-1.4.01.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/appium/java/appium-seetest-extension-12.4-javadoc.zip!/" />
+        </JAVADOC>
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/apiguardian-api-1.0.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/boon-0.33.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/commons-beanutils-1.9.3.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/commons-codec-1.11.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/commons-collections-3.2.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/commons-io-2.4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/commons-lang3-3.8.1.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/commons-logging-1.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/hamcrest-core-1.3.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/httpclient-4.5.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/httpcore-4.4.11.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/httpmime-4.5.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/imageClient.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/jackson-annotations-2.9.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/jackson-core-2.9.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/jackson-databind-2.9.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/json-20160810.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/junit-4.12.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/junit-jupiter-api-5.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/junit-jupiter-engine-5.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/junit-platform-commons-1.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/junit-platform-engine-1.2.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/manager-client-api.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/manager-client.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/mobile-webdriver.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/opentest4j-1.1.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/selenium-api-2.42.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/selenium-support-2.44.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/slf4j-api-1.7.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/slf4j-simple-1.7.7.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/ws-commons-util-1.0.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/xmlrpc-client-3.1.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/xmlrpc-common-3.1.2.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/args4j-2.33.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/imageClient_doc.zip!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://C:/Program Files (x86)/Experitest/SeeTest/clients/java/args4j-2.33.jar!/OSGI-OPT/src" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
