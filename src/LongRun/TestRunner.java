@@ -24,63 +24,63 @@ import java.io.ByteArrayInputStream;
 
 
 public class TestRunner {
-    protected static boolean chooseSpesificDevices; //Choose specific devices or run on all connected devices
+    protected static boolean chooseSpesificDevices = false; //Choose specific devices or run on all connected devices
     protected static List<Device> devices = new ArrayList<>(); // the devices list which we run on
+    protected static List<String> Choosedevices = new ArrayList<>(); // the devices SN the user want to run on
     public static String PrintDevicesInfo, PrintDeviceSN;
     public static final String delimiter = "\r\n";
     public static int TimeToRun = 10*60*60*1000;//Seconds * minutes * hours
     public static long startTime = System.currentTimeMillis();
     public static long endTime  = System.currentTimeMillis() + TimeToRun;
+    public static List<Class<?>> classlistAndroid = new ArrayList<>();
 
-    public static void main(String[] args) throws Exception  {
+    public static void main(String[] args) throws Exception {
 
-        String host = "localhost";
-        int port = 8889;
-        Date date = new Date();
-        List<Class<?>> classlistAndroid = new ArrayList<>();
+        GridClient gridClient = new GridClient("admin", "Aa123456", "", "http://oyona-pc");
         Threads myThread = null;
-        HashMap<String, Class<?>> hashMap = new HashMap<String, Class<?>>();
-        hashMap.put("LongRun.Test_1_android", Test_Ortal.class);
-        GridClient gridClient = new GridClient("admin","Aa123456","","http://oyona-pc");
-        long time = date.getTime();
-        File file = new File("Run_" + time);
-        file.mkdirs();
-        String path = file.getName();
-        String fileRes = file.getName() + File.separator + "results.txt";
+        File Runfile = CreateFile("Run_" + new Date().getTime());
+        CreateFolder(Runfile);
+        String PathToResFile = Runfile.getName() + File.separator + "results.txt";
+        InitTestList(LongTest.class);
+        InitChoosedevices("ce051605686c683b03");
 
-
-        // classlistAndroid.add(LongRun.Test_Ortal.class);
-        classlistAndroid.add(Test_Ortal.class);
-
-
-            try {
+//        if (chooseSpesificDevices) {
+//            System.out.println("------------------------------");
+//            System.out.println("Time to run: "+TimeToRun);
+//            System.out.println("Start time: :"+startTime);
+//            System.out.println("End tine: :"+endTime);
+//            System.out.println("------------------------------");
+//            myThread = new Threads(null, Runfile.getName(), deviceSN, null, true, Test_Ortal.class, PathToResFile, gridClient);
+//            myThread.start();
+//
+//        } else {
+           // try {
                 devices = getDevices(gridClient.getDevicesInformation());
                 PrintDevicesInfo = "";
                 PrintDeviceSN = "";
                 for (int i = 0; i < devices.size(); i++) {//devices.size()
                     PrintDevicesInfo += "#" + (i + 1) + " " + devices.get(i).toString() + delimiter + delimiter;
                     PrintDeviceSN += devices.get(i).getSerialnumber() + delimiter;
-                    myThread = new Threads(devices.get(i),path, devices.get(i).getSerialnumber(), classlistAndroid, false, null, fileRes, true, "'android'", gridClient);
+                    myThread = new Threads(devices.get(i), Runfile.getName(), devices.get(i).getSerialnumber(), classlistAndroid, PathToResFile, gridClient);
                     myThread.start();
                 }
                 System.out.println(PrintDeviceSN);
                 System.out.println(PrintDevicesInfo);
 
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-        }
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            }
+        //}
+    }
 
     //}
     //get devices and enter them to hash map
     public static List<Device> getDevices(String xml) throws Exception {
-
         //The user can chose if he want to run on specific devices or on all connected devices:
         //1. If the user want to run on all connected devices:
         //2. if the user wants to run on specific devices:
         List<Device> devicesMap = new ArrayList<>();
         NodeList nodeList = parseDevices(xml); //parse the xml and get back nodeList with all the devices
-
         for (int i = 0; i < nodeList.getLength(); i++) {
             Node nNode = nodeList.item(i);
             Element eElement = (Element) nNode;
@@ -97,29 +97,22 @@ public class TestRunner {
 //            System.out.println(eElement.getAttribute("serialnumber"));
 
             //if we don't want to use all devices, check if the device is in the list of device
-//            if (chooseSpesificDevices) {
-//
-//                for (String DeviceSN : Choosedevices) {
-//                    if (eElement.getAttribute("serialnumber").equalsIgnoreCase(DeviceSN)
-//                            || eElement.getAttribute("name").toLowerCase().contains(DeviceSN.toLowerCase())) {
-//                        //Create new folder for this device
-//                        device.setDeviceFolderPath(Main.createNewDir(Main.innerDirectoryPath, eElement.getAttribute("serialnumber")));
-//                        devicesMap.add(device);
-//
-//
-//                    }
-//                }
-//            } else { //if use all devices is true
+            if (chooseSpesificDevices) {
+                for (String DeviceSN : Choosedevices) {
+                    if (eElement.getAttribute("serialnumber").equalsIgnoreCase(DeviceSN)
+                            || eElement.getAttribute("name").toLowerCase().contains(DeviceSN.toLowerCase())) {
+                        //Create new folder for this device
+                      //  device.setDeviceFolderPath(Main.createNewDir(Main.innerDirectoryPath, eElement.getAttribute("serialnumber")));
+                        devicesMap.add(device);
+                    }
+                }
+            } else { //if use all devices is true
                 //Create new folder for this device
                 //device.setDeviceFolderPath(createNewDir(Main.innerDirectoryPath, eElement.getAttribute("serialnumber")));
                 devicesMap.add(device);
-
-            //}
+            }
         }
-
-
         return devicesMap;
-
     }
     //Parse the devices XML from getDevicesInformation and returns A nodeList Element
     private static NodeList parseDevices(String xml) throws Exception {
@@ -156,4 +149,24 @@ public class TestRunner {
         }
         return createdPath;
     }
+
+    public static File CreateFile(String fileName){
+        File file = new File(fileName);
+        return file;
+    }
+
+    public static void CreateFolder(File file){
+         file.mkdirs();
+    }
+
+    public static void InitTestList(Class ClassName){
+          classlistAndroid.add(ClassName);
+        //classlistAndroid.add(LongRun.Test_Ortal.class);
+        //classlistAndroid.add(LongTest.class);
+    }
+    public static void InitChoosedevices(String DeviceSN){
+        Choosedevices.add(DeviceSN);
+    }
+
+
 }

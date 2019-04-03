@@ -44,12 +44,11 @@ public class Reporter extends ReportBasics {
 
 
     //T: add row to main report
-    public  synchronized void addRowToReport(String type, String testName, String deviceSN, String status,String testDuring,String SessionID, String reportURL , String exception){
+    public  synchronized void addRowToReport(String testName, String deviceSN, String status,String testDuring,String SessionID, String reportURL , String exception){
         Date currentTime = new Date();
         String line;
         currentTime.getTime();
         line = currentTime+","+
-                type+","+
                 testName+","+
                 deviceSN+","+
                 status+","+
