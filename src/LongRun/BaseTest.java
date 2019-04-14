@@ -1,5 +1,6 @@
 package LongRun;
 
+import Reports.Reporter;
 import com.experitest.client.GridClient;
 import org.junit.After;
 import org.junit.Before;
@@ -11,20 +12,37 @@ public class BaseTest {
     String  dir, deviceName;
     Boolean wasInstalled = true;
     protected GridClient grid = null;
-
+    String myCurrThreasdSN, testName;
+    public String sessionID;
+    Reporter reporter;
+    Device device;
+    public String path;
+    long startTime, endTime;
+    Threads current;
     @Before
     public void setUp() {
-        Threads current = (Threads) Threads.currentThread();
-        String myCurrThreasdSN = "'" + current.getDeviceSN() + "'";
+        //startTime = System.currentTimeMillis();
+        System.out.println("Start:" + startTime);
+        current = (Threads) Threads.currentThread();
+        myCurrThreasdSN = "'" + current.getDeviceSN() + "'";
         grid = current.gridClient;
-        client = grid.lockDeviceForExecution("Parallel", "@serialnumber="+myCurrThreasdSN, 480, 300000);
-        client.setReporter("xml", "", "Parallel");
+        testName = "Parallel";
+        device = current.device;
+        client = grid.lockDeviceForExecution(testName, "@serialnumber="+myCurrThreasdSN, 480, 300000);
+        path = client.setReporter("xml", device.getDeviceFolderPath(), testName);
+        sessionID = client.getSessionID();
+        reporter = current.reporter;
     }
 
     @After
     public void tearDown() {
+        //endTime = System.currentTimeMillis();
+//        client.collectSupportData(current.direction,"","","","","");
+        System.out.println("End:" + endTime);
         client.generateReport(false);
-        //client.releaseClient();
+        client.releaseClient();
+        //reporter.testDetails(myCurrThreasdSN,sessionID,path);
     }
 
 }
+

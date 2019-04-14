@@ -1,18 +1,17 @@
 package LongRun;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
+import Reports.Reporter;
 import com.experitest.client.GridClient;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -22,17 +21,20 @@ import javax.xml.xpath.XPathFactory;
 import java.io.ByteArrayInputStream;
 
 
-
 public class TestRunner {
     protected static boolean chooseSpesificDevices = false; //Choose specific devices or run on all connected devices
     protected static List<Device> devices = new ArrayList<>(); // the devices list which we run on
     protected static List<String> Choosedevices = new ArrayList<>(); // the devices SN the user want to run on
     public static String PrintDevicesInfo, PrintDeviceSN;
     public static final String delimiter = "\r\n";
-    public static int TimeToRun = 10*60*60*1000;//Seconds * minutes * hours
+    public static int TimeToRun = 10 * 60 * 60 * 1000;//Seconds * minutes * hours
     public static long startTime = System.currentTimeMillis();
-    public static long endTime  = System.currentTimeMillis() + TimeToRun;
+    public static long endTime = System.currentTimeMillis() + TimeToRun;
     public static List<Class<?>> classlistAndroid = new ArrayList<>();
+    public static Reporter reporter;
+    public static String pathToFolder = System.getProperty("user.dir");
+    //public static int numOfDevices = 10;
+    public static int passCount=0, failCount=0;
 
     public static void main(String[] args) throws Exception {
 
@@ -40,40 +42,26 @@ public class TestRunner {
         Threads myThread = null;
         File Runfile = CreateFile("Run_" + new Date().getTime());
         CreateFolder(Runfile);
+        PrintWriter totalRes = new PrintWriter(CreateFile( Runfile.getName() + File.separator + "Total.csv"));
         String PathToResFile = Runfile.getName() + File.separator + "results.txt";
+        InitTestList(Test_Ortal.class);
         InitTestList(LongTest.class);
         InitChoosedevices("ce051605686c683b03");
-
-//        if (chooseSpesificDevices) {
-//            System.out.println("------------------------------");
-//            System.out.println("Time to run: "+TimeToRun);
-//            System.out.println("Start time: :"+startTime);
-//            System.out.println("End tine: :"+endTime);
-//            System.out.println("------------------------------");
-//            myThread = new Threads(null, Runfile.getName(), deviceSN, null, true, Test_Ortal.class, PathToResFile, gridClient);
-//            myThread.start();
-//
-//        } else {
-           // try {
-                devices = getDevices(gridClient.getDevicesInformation());
-                PrintDevicesInfo = "";
-                PrintDeviceSN = "";
-                for (int i = 0; i < devices.size(); i++) {//devices.size()
-                    PrintDevicesInfo += "#" + (i + 1) + " " + devices.get(i).toString() + delimiter + delimiter;
-                    PrintDeviceSN += devices.get(i).getSerialnumber() + delimiter;
-                    myThread = new Threads(devices.get(i), Runfile.getName(), devices.get(i).getSerialnumber(), classlistAndroid, PathToResFile, gridClient);
-                    myThread.start();
-                }
-                System.out.println(PrintDeviceSN);
-                System.out.println(PrintDevicesInfo);
-
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            }
-        //}
+        //reporter = Reporter.getInstance("Results", pathToFolder + File.separator + Runfile.getName());
+        //reporter.addRowToReport("Test Name", "Device SN", "Status", "Test During", "Session ID", "Report URL", "Exception");
+        devices = getDevices(gridClient.getDevicesInformation());
+        PrintDevicesInfo = "";
+        PrintDeviceSN = "";
+        for (int i = 0; i < devices.size(); i++) {
+            PrintDevicesInfo += "#" + (i + 1) + " " + devices.get(i).toString() + delimiter + delimiter;
+            PrintDeviceSN += devices.get(i).getSerialnumber() + delimiter;
+            myThread = new Threads(devices.get(i), Runfile.getName(), devices.get(i).getSerialnumber(), classlistAndroid, PathToResFile, gridClient, reporter, totalRes);
+            myThread.start();
+        }
+        System.out.println(PrintDeviceSN);
+        System.out.println(PrintDevicesInfo);
     }
 
-    //}
     //get devices and enter them to hash map
     public static List<Device> getDevices(String xml) throws Exception {
         //The user can chose if he want to run on specific devices or on all connected devices:
@@ -102,7 +90,7 @@ public class TestRunner {
                     if (eElement.getAttribute("serialnumber").equalsIgnoreCase(DeviceSN)
                             || eElement.getAttribute("name").toLowerCase().contains(DeviceSN.toLowerCase())) {
                         //Create new folder for this device
-                      //  device.setDeviceFolderPath(Main.createNewDir(Main.innerDirectoryPath, eElement.getAttribute("serialnumber")));
+                        //  device.setDeviceFolderPath(Main.createNewDir(Main.innerDirectoryPath, eElement.getAttribute("serialnumber")));
                         devicesMap.add(device);
                     }
                 }
@@ -114,6 +102,7 @@ public class TestRunner {
         }
         return devicesMap;
     }
+
     //Parse the devices XML from getDevicesInformation and returns A nodeList Element
     private static NodeList parseDevices(String xml) throws Exception {
         //Using JDOM to parse the devices xml
@@ -150,23 +139,23 @@ public class TestRunner {
         return createdPath;
     }
 
-    public static File CreateFile(String fileName){
+    public static File CreateFile(String fileName) {
         File file = new File(fileName);
         return file;
     }
 
-    public static void CreateFolder(File file){
-         file.mkdirs();
+    public static void CreateFolder(File file) {
+        file.mkdirs();
     }
 
-    public static void InitTestList(Class ClassName){
-          classlistAndroid.add(ClassName);
+    public static void InitTestList(Class ClassName) {
+        classlistAndroid.add(ClassName);
         //classlistAndroid.add(LongRun.Test_Ortal.class);
         //classlistAndroid.add(LongTest.class);
     }
-    public static void InitChoosedevices(String DeviceSN){
+
+    public static void InitChoosedevices(String DeviceSN) {
         Choosedevices.add(DeviceSN);
     }
-
 
 }
