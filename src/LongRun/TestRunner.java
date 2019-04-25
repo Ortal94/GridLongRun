@@ -45,8 +45,8 @@ public class TestRunner {
         PrintWriter totalRes = new PrintWriter(CreateFile( Runfile.getName() + File.separator + "Total.csv"));
         String PathToResFile = Runfile.getName() + File.separator + "results.txt";
         InitTestList(Test_Ortal.class);
-        InitTestList(LongTest.class);
-        InitChoosedevices("ce051605686c683b03");
+        //InitTestList(LongTest.class);
+        InitChoosedevices("899X07061");
         //reporter = Reporter.getInstance("Results", pathToFolder + File.separator + Runfile.getName());
         //reporter.addRowToReport("Test Name", "Device SN", "Status", "Test During", "Session ID", "Report URL", "Exception");
         devices = getDevices(gridClient.getDevicesInformation());

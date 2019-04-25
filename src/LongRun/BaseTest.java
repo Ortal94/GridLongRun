@@ -29,7 +29,7 @@ public class BaseTest {
         testName = "Parallel";
         device = current.device;
         client = grid.lockDeviceForExecution(testName, "@serialnumber="+myCurrThreasdSN, 480, 300000);
-        path = client.setReporter("xml", device.getDeviceFolderPath(), testName);
+        path = client.setReporter("xml", "", testName);
         sessionID = client.getSessionID();
         reporter = current.reporter;
     }
@@ -37,7 +37,7 @@ public class BaseTest {
     @After
     public void tearDown() {
         //endTime = System.currentTimeMillis();
-//        client.collectSupportData(current.direction,"","","","","");
+//        client.collectSupportData(current.direction,"",device.getDeviceName(),"","","");
         System.out.println("End:" + endTime);
         client.generateReport(false);
         client.releaseClient();

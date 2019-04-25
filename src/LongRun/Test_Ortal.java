@@ -14,6 +14,8 @@ public class Test_Ortal extends BaseTest{
         client.setLocation("36.296238", "-91.933594"); // USA
         client.install("cloud:com.experitest.ExperiBank", true, false);
         client.launch("com.experitest.ExperiBank/.LoginActivity", true, true);
+        client.sleep(500);
+        Assert.assertTrue(client.isElementFound("native", "//*[@text='Login']"));
         client.closeKeyboard();
         client.applicationClose("com.experitest.ExperiBank/.LoginActivity");
         client.uninstall("cloud:com.experitest.ExperiBank");
@@ -27,8 +29,7 @@ public class Test_Ortal extends BaseTest{
 //
 //        if(num%2==0){
 //            System.out.println("Stop Logging Device");
-           client.stopLoggingDevice();
-
+           //client.stopLoggingDevice();
 
 
         // }
